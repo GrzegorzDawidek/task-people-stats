@@ -1,8 +1,12 @@
 package com.company;
 class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world");
-    }
+	System.out.println("Hello world");
+		 
+    PeopleStats peopleStats = new PeopleStats(Paths.get("śćieżka", "do", "pliku"));
+
+    System.out.println(String.format("Liczba osób: %d", peopleStats.count()));
+}
 }
 
 class PeopleStats {
@@ -18,6 +22,9 @@ class PeopleStats {
             throw new IllegalStateException(e);
         }
     }
+	public long count() {
+    return people.size();
+}
 }
 
 class Person {
